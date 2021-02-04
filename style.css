@@ -1,0 +1,144 @@
+/*
+    Name : Movie Seat Booking System
+    Author : Ismail Boularbah
+    Date : 03 / 02 / 2021
+    Languages used : HTML CSS JS
+    Copyright : BOULARBAH ISMAIL 2021
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+    outline: none;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.author-name {
+    font-family: 'Lato', 'sans-serif';
+    font-weight: initial;
+}
+
+body{
+    background-color: #242333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Lato', 'sans-serif';
+    margin: 0;
+    transition: 1s;
+    opacity: 0;
+}
+
+.movie-container{
+    margin: 20px 0;
+}
+
+label {
+/*    margin: auto 11px;*/
+}
+
+.movie-container select{
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.container{
+    perspective: 1100px;
+    margin-bottom: 30px;
+}
+
+.seat {
+    background-color: #444451;
+    height: 16px;
+    width: 18px;
+    margin: 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: 0.2s;
+}
+
+.seat.selected {
+/*    background-color: #6feaf6;*/
+    background-color: teal;
+}
+
+.seat.occupied {
+    background-color: #fff;
+}
+
+/* Specify a margin-left for every .seat element that is the second .seat element of its parent row: */
+.seat:nth-of-type(2){
+    margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2){
+    margin-left: 18px;
+}
+
+/* Seats that dont have a class of .occupied, apply hover*/
+.seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+/* not in showcase */
+.showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+.showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.showcase li small {
+    margin-left: 2px;
+}
+
+.row{
+    display: flex;
+}
+
+.screen {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+p.text{
+    margin: 5px 0;
+}
+
+p.text span{
+    color: #6feaf6;
+}
